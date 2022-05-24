@@ -6,6 +6,19 @@
 
     width: 64%;
 }
+#mobile-img-first {
+    display: none;
+}
+/* First Image Responsive */
+@media only screen and (max-width: 600px) {
+    .first-section img {
+     display: none;
+    }
+    #mobile-img-first{
+        display: flex;
+        width: 106%;
+    }
+  }
 
 /*bbbotsrap css*/
 @import url('https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab');
@@ -185,9 +198,17 @@ transition: .25s all ease;
 .schorlarship-wrapper .bold {
     margin-top:0;
     margin-bottom: 1rem;
-    color: white;
+    color: rgb(255, 255, 255);
 }
-p .light 
-{
-    color: white;
+
+
+@media only screen and (max-width: 600px) {
+
+    .schorlarship-wrapper .bold{
+        margin-left: 40px;
+    }
+    .col{
+        margin-left: 47px;
+    }
 }
+
