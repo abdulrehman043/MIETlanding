@@ -1,3 +1,30 @@
+<?php
+require 'conn.php';
+if(isset($_POST['registerbtn']))
+{
+    $name=$_POST['firstname'];
+    $email=$_POST['lastname'];
+    $phone=$_POST['youremail'];
+    $state=$_POST['state1'];
+    $course=$_POST['cars'];
+    $branch=$_POST['cars2'];
+
+    $query= "INSERT INTO contact(`firstname`,`lastname`,`youremail`,`state1`,`cars`,`cars2`) VALUES ('$name','$email','$phone','$state','$course','$branch');";
+
+    if(mysqli_query($conn,$query))
+   {
+        echo "Succesfully Inserted";
+
+   }
+    else
+
+   {
+   echo "Not Successful";
+   }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,11 +78,41 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPhone">Select State <span>*</span></label>
-                                <select id="cars" name="cars">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="fiat">Fiat</option>
-                                    <option value="audi">Audi</option>
+                                <select id="cars" name="state1">
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh	</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Chhattisgarh">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Dadra & Nagar Haveli and Daman & Diu">Dadra & Nagar Haveli and Daman & Diu</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                    <option value="Lakshadweep">Lakshadweep</option>
+                                    <option value="Puducherry">Puducherry</option>
+                                    <option value="Ladakh">Ladakh</option>
+                                    
                                 </select>
 
                                 <div id="phone_error" class="val_error"></div>
@@ -66,26 +123,24 @@
 
 
                         <div class="form-group mt-0">
-                            <label for="exampleFormControlTextarea1">Select City <span>*</span></label>
+                            <label for="exampleFormControlTextarea1">Course<span>*</span></label>
                             <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                 name="yourmessage"></textarea> -->
                             <select id="cars" name="cars">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="fiat">Fiat</option>
-                                <option value="audi">Audi</option>
+                                <option value="btech">B.Tech</option>
+                               
                             </select>
                             <div id="message_error" class="val_error"></div>
                         </div>
                         <div class="form-group mt-0">
-                            <label for="exampleFormControlTextarea1">Select City <span>*</span></label>
+                            <label for="exampleFormControlTextarea1">Select Branch <span>*</span></label>
                             <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                 name="yourmessage"></textarea> -->
-                            <select id="cars" name="cars">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="fiat">Fiat</option>
-                                <option value="audi">Audi</option>
+                            <select id="cars" name="cars2">
+                                <option value="cse">CSE</option>
+                                <option value="cseai">CSE- AI</option>
+                                <option value="ece">ECE</option>
+                               
                             </select>
                             <div id="message_error" class="val_error"></div>
                         </div>
@@ -95,8 +150,8 @@
                                 updates</label>
                         </div>
                         <div class="form-button pt-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-lg" value="Register"
-                                name="register"><span>SEND MESSAGE</span></button>
+                            <button type="submit" input type="submit" class="btn btn-primary btn-block btn-lg" value="Register"
+                                name="registerbtn"><span>SEND MESSAGE</span></button>
                         </div>
                     </div>
                 </div>
@@ -295,6 +350,107 @@
           </div>
         </div>
       </div>
+      <div class="feat bg-gray pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="section-head col-sm-12">
+          <h4><span>Why Choose</span> Us?</h4>
+          <p>When you choose us, you'll feel the benefit of 10 years' experience of Web Development. Because we know the digital world and we know that how to handle it. With working knowledge of online, SEO and social media.</p>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
+            <h6>Modern Design</h6>
+            <p>We use latest technology for the latest world because we know the demand of peoples.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
+            <h6>Creative Design</h6>
+            <p>We are always creative and and always lisen our costomers and we mix these two things and make beast design.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
+            <h6>24 x 7 User Support</h6>
+            <p>If our customer has any problem and any query we are always happy to help then.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
+            <h6>Business Growth</h6>
+            <p>Everyone wants to live on top of the mountain, but all the happiness and growth occurs while you're climbing it</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
+            <h6>Market Strategy</h6>
+            <p>Holding back technology to preserve broken business models is like allowing blacksmiths to veto the internal combustion engine in order to protect their horseshoes.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
+            <h6>Affordable cost</h6>
+            <p>Love is a special word, and I use it only when I mean it. You say the word too much and it becomes cheap.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+  <div class="about">
+    <div class="title-ab"><h1>About The Company</h1></div>
+    <div class="desc"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores modi vel blanditiis doloribus commodi impedit!. Lorem ipsum dolor sit amet consectetur adipisicing elit. </p></div>
+  </div>
+  <div class="row-ab">
+    <div class="card-ab">
+      <div class="card_img">
+        <i class="fas fa-rocket"></i>
+        </div>
+      <div class="card_title">HTML</div>
+      <div class="card_body"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p></div>
+    </div>
+    <div class="card-ab">
+      <div class="card_img">
+        <i class="fab fa-cloudversify"></i>
+      </div>
+      <div class="card_title">CSS</div>
+      <div class="card_body"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p></div>
+    </div>
+    <div class="card-ab">
+      <div class="card_img">
+        <i class="fas fa-user-astronaut"></i>
+      </div>
+      <div class="card_title">JAVASCRIPT</div>
+      <div class="card_body"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p></div>
+    </div>
+    
+  </div>
+
+</section>
+<div class="title-clife"><h1>Life at MIET</h1></div>
+<section class="campus-life">
+
+<div class="col-md-4">
+
+           
+                <div class="image">
+                    <img src="https://i.imgur.com/ptT381b.jpg"/>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="image">
+                    <img src="https://i.imgur.com/EGtKPqm.jpg"/>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="image">
+                    <img src="https://i.imgur.com/cv3bPVx.jpg"/>
+                </div>
+            </div>
+            
+</section>
 
     <script src="index.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
