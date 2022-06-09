@@ -872,3 +872,22 @@ header {
         margin-top : 32px; 
     }
   }
+
+  .p-process
+  {
+      font-size: 21px;
+      border-style: solid;
+      margin-top: 48px;
+  }
+      
+  .row-miet{
+    background-color: #5ac7c7;
+    display: flex;
+  }
+  @media (max-width: 630px){
+    .row-miet{
+        /* background-color: #5ac7c7; */
+        display: block;
+      }
+
+  }
